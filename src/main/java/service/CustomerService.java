@@ -34,4 +34,13 @@ public class CustomerService {
         }
         return false;
     }
+
+    public static int searchCustomer(String id){
+        for (int i = 0; i < customerList.size(); i++) {
+            if (customerList.get(i).getId().equals(id)){
+                return i;
+            }
+        }
+        return -1;
+    }
 }
