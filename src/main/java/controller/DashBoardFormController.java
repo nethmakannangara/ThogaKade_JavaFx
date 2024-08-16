@@ -13,6 +13,8 @@ public class DashBoardFormController {
     Stage stageAddCustomer;
     Stage stageDeleteCustomer;
     Stage stageUpdateCustomer;
+    Stage stageSearchCustomer;
+
 
     @FXML
     void btnAddCustomerOnAction(ActionEvent event) {
@@ -42,7 +44,15 @@ public class DashBoardFormController {
 
     @FXML
     void btnSearchCustomerOnAction(ActionEvent event) {
-
+        if(null==stageSearchCustomer){
+            stageSearchCustomer=new Stage();
+            try {
+                stageSearchCustomer.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/search_customer_form.fxml"))));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        stageSearchCustomer.show();
     }
 
     @FXML
