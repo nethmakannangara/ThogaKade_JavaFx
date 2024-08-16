@@ -11,6 +11,8 @@ import java.io.IOException;
 public class DashBoardFormController {
 
     Stage stageAddCustomer;
+    Stage stageDeleteCustomer;
+    Stage stageUpdateCustomer;
 
     @FXML
     void btnAddCustomerOnAction(ActionEvent event) {
@@ -22,13 +24,20 @@ public class DashBoardFormController {
                 throw new RuntimeException(e);
             }
         }
-
         stageAddCustomer.show();
     }
 
     @FXML
     void btnDeleteCustomerOnAction(ActionEvent event) {
-
+        if (null == stageDeleteCustomer) {
+            stageDeleteCustomer = new Stage();
+            try {
+                stageDeleteCustomer.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/delete_customer _form.fxml"))));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        stageDeleteCustomer.show();
     }
 
     @FXML
@@ -38,13 +47,15 @@ public class DashBoardFormController {
 
     @FXML
     void btnUpdateCustomerOnAction(ActionEvent event) {
-        Stage stage = new Stage();
-        try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/update_customer_form.fxml"))));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if(null==stageUpdateCustomer) {
+            stageUpdateCustomer=new Stage();
+            try {
+                stageUpdateCustomer.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/update_customer_form.fxml"))));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
-        stage.show();
+        stageUpdateCustomer.show();
     }
 
 }

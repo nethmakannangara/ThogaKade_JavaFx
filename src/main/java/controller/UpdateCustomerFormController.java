@@ -32,6 +32,7 @@ public class UpdateCustomerFormController {
 
     List<Customer> customerList= DBConnection.getInstance().getCustomerList();
     int index;
+
     @FXML
     void btnSearchOnAction(ActionEvent event) {
         txtSearch.setDisable(true);
