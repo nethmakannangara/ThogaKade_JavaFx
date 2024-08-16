@@ -4,6 +4,7 @@ import bd.DBConnection;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import model.Customer;
@@ -30,22 +31,30 @@ public class UpdateCustomerFormController {
     @FXML
     private JFXTextField txtSearch;
 
-    List<Customer> customerList= DBConnection.getInstance().getCustomerList();
+    List<Customer> customerList = DBConnection.getInstance().getCustomerList();
     int index;
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
         txtSearch.setDisable(true);
         index = CustomerService.searchCustomer(txtSearch.getText());
-        txtName.setText(customerList.get(index).getName());
-        txtAddress.setText(customerList.get(index).getAddress());
-        txtContactNo.setText(customerList.get(index).getNumber());
-        dateDoB.setValue(customerList.get(index).getDob());
+        if (index != -1) {
+            txtName.setText(customerList.get(index).getName());
+            txtAddress.setText(customerList.get(index).getAddress());
+            txtContactNo.setText(customerList.get(index).getNumber());
+            dateDoB.setValue(customerList.get(index).getDob());
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setContentText("Invalid CustomerID...");
+            alert.showAndWait();
+        }
+
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-        customerList.set(index,new Customer(txtSearch.getText(),cmbTitle.getValue(),txtName.getText(),txtAddress.getText(),txtContactNo.getText(),dateDoB.getValue()));
+        customerList.set(index, new Customer(txtSearch.getText(), cmbTitle.getValue(), txtName.getText(), txtAddress.getText(), txtContactNo.getText(), dateDoB.getValue()));
         clearTextFiled();
     }
 

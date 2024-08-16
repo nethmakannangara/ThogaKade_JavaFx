@@ -8,46 +8,54 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="547.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateCustomerFormController">
+<AnchorPane prefHeight="401.0" prefWidth="437.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateCustomerFormController">
    <children>
-      <Label layoutX="162.0" layoutY="33.0" text="UPDATE Customer">
+      <Label alignment="CENTER" layoutX="55.0" layoutY="14.0" prefHeight="51.0" prefWidth="328.0" style="-fx-background-color: #ffbd03;" text="UPDATE CUSTOMER FORM" textFill="WHITE">
          <font>
-            <Font name="Bookman Old Style" size="24.0" />
+            <Font name="Courier New Bold Italic" size="24.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtSearch" layoutX="33.0" layoutY="91.0" promptText="Search" />
-      <JFXButton layoutX="199.0" layoutY="91.0" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="104.0" text="Search">
+      <JFXTextField fx:id="txtSearch" layoutX="33.0" layoutY="91.0" prefHeight="22.0" prefWidth="119.0" promptText="Search">
          <font>
-            <Font size="14.0" />
+            <Font name="Bell MT" size="14.0" />
+         </font></JFXTextField>
+      <JFXButton layoutX="159.0" layoutY="90.0" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #ffee32;" text="Search">
+         <font>
+            <Font name="Goudy Old Style Bold" size="15.0" />
          </font>
       </JFXButton>
-      <Label layoutX="33.0" layoutY="140.0" prefHeight="22.0" prefWidth="92.0" text="Name :">
+      <Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="168.0" prefHeight="22.0" prefWidth="92.0" text="Name :">
          <font>
-            <Font name="Bodoni MT" size="18.0" />
+            <Font name="Bookman Old Style" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="178.0" prefHeight="22.0" prefWidth="92.0" text="Address :">
+      <Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="206.0" prefHeight="22.0" prefWidth="92.0" text="Address :">
          <font>
-            <Font name="Bodoni MT" size="18.0" />
+            <Font name="Bookman Old Style" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="21.0" layoutY="213.0" prefHeight="22.0" prefWidth="104.0" text="Contact NO : ">
+      <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="241.0" prefHeight="22.0" prefWidth="104.0" text="Contact NO : ">
          <font>
-            <Font name="Bodoni MT" size="18.0" />
+            <Font name="Bookman Old Style" size="14.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtName" layoutX="119.0" layoutY="139.0" />
-      <JFXTextField fx:id="txtAddress" layoutX="119.0" layoutY="177.0" />
-      <JFXTextField fx:id="txtContactNo" layoutX="132.0" layoutY="212.0" />
-      <Label layoutX="21.0" layoutY="258.0" text="BirthDay">
+      <JFXTextField fx:id="txtName" layoutX="159.0" layoutY="165.0" />
+      <JFXTextField fx:id="txtAddress" layoutX="159.0" layoutY="199.0" />
+      <JFXTextField fx:id="txtContactNo" layoutX="159.0" layoutY="236.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="36.0" layoutY="281.0" prefHeight="16.0" prefWidth="92.0" text="BirthDay :">
          <font>
-            <Font size="18.0" />
+            <Font name="Bookman Old Style" size="14.0" />
          </font>
       </Label>
-      <DatePicker fx:id="dateDoB" layoutX="111.0" layoutY="259.0" prefHeight="25.0" prefWidth="200.0" />
-      <JFXButton layoutX="371.0" layoutY="325.0" onAction="#btnUpdateOnAction" text="Update" />
-      <ComboBox fx:id="cmbTitle" layoutX="296.0" layoutY="128.0" prefWidth="150.0" />
-      <JFXButton layoutX="173.0" layoutY="313.0" onAction="#btnCancelOnAction" text="Cancel" />
+      <DatePicker fx:id="dateDoB" layoutX="159.0" layoutY="278.0" prefHeight="25.0" prefWidth="135.0" />
+      <JFXButton layoutX="251.0" layoutY="338.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #ffee32;" text="Update">
+         <font>
+            <Font name="Goudy Old Style Bold" size="15.0" />
+         </font></JFXButton>
+      <ComboBox fx:id="cmbTitle" layoutX="62.0" layoutY="131.0" prefHeight="25.0" prefWidth="69.0" promptText="Title" />
+      <JFXButton layoutX="341.0" layoutY="338.0" onAction="#btnCancelOnAction" style="-fx-background-color: #ffee32;" text="Cancel">
+         <font>
+            <Font name="Goudy Old Style Bold" size="15.0" />
+         </font></JFXButton>
    </children>
 </AnchorPane>

@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import model.Customer;
 import service.CustomerService;
@@ -36,7 +37,7 @@ public class DeleteCustomerFormController implements Initializable {
     @FXML
     private JFXTextField txtSearch;
 
-    List<Customer> customerList= DBConnection.getInstance().getCustomerList();
+    List<Customer> customerList = DBConnection.getInstance().getCustomerList();
     int index;
 
     @FXML
@@ -50,16 +51,16 @@ public class DeleteCustomerFormController implements Initializable {
 
         try {
             Thread.sleep(600);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             clearTextFiled();
         }
     }
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
-        index=CustomerService.searchCustomer(txtSearch.getText());
+        index = CustomerService.searchCustomer(txtSearch.getText());
 
-        if(index!=-1){
+        if (index != -1) {
             lblTitle.setText(customerList.get(index).getTitle());
             lblName.setText(customerList.get(index).getName());
             lblAddress.setText(customerList.get(index).getAddress());
@@ -68,6 +69,11 @@ public class DeleteCustomerFormController implements Initializable {
 
             btnDelete.setDisable(false);
             clearTextFiled();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setContentText("Invalid CustomerID...");
+            alert.showAndWait();
         }
 
     }

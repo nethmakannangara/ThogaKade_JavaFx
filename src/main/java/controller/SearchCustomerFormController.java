@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import model.Customer;
 import service.CustomerService;
@@ -34,8 +35,9 @@ public class SearchCustomerFormController {
     @FXML
     private JFXTextField txtSearch;
 
-    List<Customer> customerList= DBConnection.getInstance().getCustomerList();
+    List<Customer> customerList = DBConnection.getInstance().getCustomerList();
     int index;
+
     @FXML
     void btnCancelOnAction(ActionEvent event) {
 
@@ -43,13 +45,20 @@ public class SearchCustomerFormController {
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
-        index=CustomerService.searchCustomer(txtSearch.getText());
+        index = CustomerService.searchCustomer(txtSearch.getText());
 
-        lblTitle.setText(customerList.get(index).getTitle());
-        lblName.setText(customerList.get(index).getName());
-        lblAddress.setText(customerList.get(index).getAddress());
-        lblContactNo.setText(customerList.get(index).getNumber());
-        lblDoB.setText(String.valueOf(customerList.get(index).getDob()));
+        if (index != -1) {
+            lblTitle.setText(customerList.get(index).getTitle());
+            lblName.setText(customerList.get(index).getName());
+            lblAddress.setText(customerList.get(index).getAddress());
+            lblContactNo.setText(customerList.get(index).getNumber());
+            lblDoB.setText(String.valueOf(customerList.get(index).getDob()));
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setContentText("Invalid CustomerID...");
+            alert.showAndWait();
+        }
     }
 
 }

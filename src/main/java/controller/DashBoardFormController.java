@@ -44,8 +44,8 @@ public class DashBoardFormController {
 
     @FXML
     void btnSearchCustomerOnAction(ActionEvent event) {
-        if(null==stageSearchCustomer){
-            stageSearchCustomer=new Stage();
+        if (null == stageSearchCustomer) {
+            stageSearchCustomer = new Stage();
             try {
                 stageSearchCustomer.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/search_customer_form.fxml"))));
             } catch (IOException e) {
@@ -57,8 +57,8 @@ public class DashBoardFormController {
 
     @FXML
     void btnUpdateCustomerOnAction(ActionEvent event) {
-        if(null==stageUpdateCustomer) {
-            stageUpdateCustomer=new Stage();
+        if (null == stageUpdateCustomer) {
+            stageUpdateCustomer = new Stage();
             try {
                 stageUpdateCustomer.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/update_customer_form.fxml"))));
             } catch (IOException e) {

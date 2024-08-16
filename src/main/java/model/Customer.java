@@ -10,10 +10,10 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @ToString
 public class Customer {
-    String id;
-    String title;
-    String name;
-    String address;
-    String number;
-    LocalDate dob;
+    private String id;
+    private String title;
+    private String name;
+    private String address;
+    private String number;
+    private LocalDate dob;
 }
