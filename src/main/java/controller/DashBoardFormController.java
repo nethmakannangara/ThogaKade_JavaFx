@@ -22,6 +22,7 @@ public class DashBoardFormController {
             stageAddCustomer = new Stage();
             try {
                 stageAddCustomer.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/add_customer_form.fxml"))));
+                stageAddCustomer.setResizable(false);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -35,6 +36,7 @@ public class DashBoardFormController {
             stageDeleteCustomer = new Stage();
             try {
                 stageDeleteCustomer.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/delete_customer _form.fxml"))));
+                stageDeleteCustomer.setResizable(false);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -48,6 +50,7 @@ public class DashBoardFormController {
             stageSearchCustomer = new Stage();
             try {
                 stageSearchCustomer.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/search_customer_form.fxml"))));
+                stageSearchCustomer.setResizable(false);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -61,6 +64,7 @@ public class DashBoardFormController {
             stageUpdateCustomer = new Stage();
             try {
                 stageUpdateCustomer.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/update_customer_form.fxml"))));
+                stageUpdateCustomer.setResizable(false);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -45,23 +45,23 @@
          <font>
             <Font name="Trebuchet MS" size="15.0" />
          </font></JFXButton>
-      <Label fx:id="lblTitle" layoutX="175.0" layoutY="157.0" prefHeight="17.0" prefWidth="100.0" text="Label">
+      <Label fx:id="lblTitle" layoutX="175.0" layoutY="157.0" prefHeight="17.0" prefWidth="100.0">
          <font>
             <Font name="Segoe Fluent Icons" size="15.0" />
          </font></Label>
-      <Label fx:id="lblName" layoutX="175.0" layoutY="192.0" prefHeight="17.0" prefWidth="100.0" text="Label">
+      <Label fx:id="lblName" layoutX="175.0" layoutY="192.0" prefHeight="17.0" prefWidth="100.0">
          <font>
             <Font name="Segoe Fluent Icons" size="15.0" />
          </font></Label>
-      <Label fx:id="lblAddress" layoutX="175.0" layoutY="225.0" prefHeight="17.0" prefWidth="100.0" text="Label">
+      <Label fx:id="lblAddress" layoutX="175.0" layoutY="225.0" prefHeight="17.0" prefWidth="100.0">
          <font>
             <Font name="Segoe Fluent Icons" size="15.0" />
          </font></Label>
-      <Label fx:id="lblContactNo" layoutX="175.0" layoutY="262.0" prefHeight="17.0" prefWidth="100.0" text="Label">
+      <Label fx:id="lblContactNo" layoutX="175.0" layoutY="262.0" prefHeight="17.0" prefWidth="100.0">
          <font>
             <Font name="Segoe Fluent Icons" size="15.0" />
          </font></Label>
-      <Label fx:id="lblDoB" layoutX="175.0" layoutY="299.0" prefHeight="17.0" prefWidth="100.0" text="Label">
+      <Label fx:id="lblDoB" layoutX="175.0" layoutY="299.0" prefHeight="17.0" prefWidth="100.0">
          <font>
             <Font name="Segoe Fluent Icons" size="15.0" />
          </font></Label>
